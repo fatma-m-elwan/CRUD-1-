@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUDS</title>
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section>
+        <div class="container bg-info p-3 my-3 rounded-4">
+            <h1 class="text-center">CRUD SYSTEM</h1>
+
+            <div class="form-floating mb-3">
+                <!-- <input oninput="validitionNameInput()" type="text" class="form-control "  id="productName" placeholder=""> -->
+                <input oninput="validitionInputs( this , 'msgName' )" type="text" class="form-control "  id="productName" placeholder="">
+                <label for="productName">Product Name</label>
+                <p id="msgName" class="alert alert-danger d-none" >
+                    It must start letter ,number space, but a maximum at top 20 characters
+                </p>
+            </div>
+
+            <div class="form-floating mb-3">
+                <!-- <input oninput="validitionPriceInput()" type="number" class="form-control" id="productPrice" placeholder=""> -->
+                <input oninput="validitionInputs( this , 'msgPrice' )" type="number" class="form-control" id="productPrice" placeholder="">
+                <label for="productPrice">Product Price</label>
+                <p id="msgPrice" class="alert alert-danger d-none">
+                    It should be a number with up to 10 digits before the decimal point and up to 2 digits after the decimal
+                    (e.g., 100, 49.99, 1234567890.50)
+                </p>
+            </div>
+
+            <div class="form-floating mb-3">
+                <!-- <input oninput="validitionCategoryInput()" list="list" type="text" class="form-control" id="productCategory" placeholder=""> -->
+                <input oninput="validitionInputs( this , 'msgCategory' )" list="list" type="text" class="form-control" id="productCategory" placeholder="">
+                <label for="productCategory">Product Category</label>
+                <datalist id="list">
+                    <option value="Tv"/>
+                    <option value="Mobile"/>
+                    <option value="Screens"/>
+                    <option value="Electronic"/>
+                </datalist>
+                <p id="msgCategory" class="alert alert-danger d-none">
+                    Please select a valid category: mobile, tv, screens, or electronic.
+                </p>
+            </div>
+
+            <div class="form-floating mb-3">
+                <!-- <textarea  oninput="validitionDescriptionInput()" style="height: 100px;" type="text" class="form-control" id="productDescription" placeholder=""></textarea> -->
+                <textarea  oninput="validitionInputs( this , 'msgDescription' )" style="height: 100px;" type="text" class="form-control" id="productDescription" placeholder=""></textarea>
+                <label for="productDescription">Product Description</label>
+                <p id="msgDescription" class="alert alert-danger d-none">
+                    Please enter a description between 3 and 150 characters. Letters, numbers, punctuation, and spaces are
+                    allowed.
+                </p>
+            </div>
+
+            <div class="form-floating mb-3">
+                <!-- <input onchange="validitionImageInput()" type="file" class="form-control" id="productImage" placeholder=""> -->
+                <input onchange="validitionInputs( this ,  'msgImage' )" type="file" class="form-control" id="productImage" placeholder="">
+                <label for="productImage">Product Image</label>
+                <p id="msgImage" class="alert alert-danger d-none">
+                    Please enter a image have extaintion with jpg or jpeg or png or svg or avif. 
+                </p>
+            </div>
+
+            <div>
+                <button onclick="addProduct()" id="btnAdd" class="btn btn-primary btn-sm">Add Product</button>
+                <button onclick="updateData()" id="btnUpdate" class="btn btn-warning btn-sm d-none">Update Product</button>
+            </div>
+            
+        </div>
+    </section>
+    
+    <section>
+        <div class="container-fluid ">
+            <input oninput="searchData()" type="search" class="form-control w-50 m-auto" id="searchInput"  placeholder="Search By Name.........">
+
+            <div id="rowData"  class="row border my-4 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 ">    
+               
+            </div>
+        </div>
+    </section>
+    
+                
+                
+    
+                
+    
+
+    <script src="js/index.js"></script>
+</body>
+</html>
